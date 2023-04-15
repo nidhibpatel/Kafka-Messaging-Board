@@ -5,6 +5,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
 
+import com.kafka472.kafkachatbackend.configs.ConsumerConfigurations;
 import com.kafka472.kafkachatbackend.constants.KafkaConstants;
 import com.kafka472.kafkachatbackend.model.Message;
 
@@ -15,7 +16,8 @@ public class MessageListener {
 
     @KafkaListener(
             topics = KafkaConstants.KAFKA_TOPIC,
-            groupId = KafkaConstants.GROUP_ID
+            groupId = KafkaConstants.GROUP_ID,
+            containerFactory = "kafkaConsumerContainerFactory"
     )
     public void listen(Message message) {
         System.out.println("sending via kafka listener..");

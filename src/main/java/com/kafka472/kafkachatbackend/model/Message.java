@@ -1,17 +1,17 @@
 package com.kafka472.kafkachatbackend.model;
 
 public class Message{
-    private String From;
+    private String from;
     private String message;
     private String timestamp;
 
     public Message(){
     }
     public String getFrom() {
-        return From;
+        return from;
     }
     public void setFrom(String from) {
-        From = from;
+        this.from = from;
     }
     public String getMessage() {
         return message;
@@ -27,13 +27,19 @@ public class Message{
     }
     //constructor stores from & message to the private variables
     public Message(String from, String message) {
-        From = from;
+        this.from = from;
         this.message = message;
+    }
+
+    public Message(String from, String message, String timestamp) {
+        this.from = from;
+        this.message = message;
+        this.timestamp = timestamp;
     }
 
     @Override
     public String toString(){
-        return "Message{" + "From='" + From + '\'' +
+        return "Message{" + "From='" + this.from + '\'' +
                 ", message='" + message + '\'' +
                 ", timestamp='" + timestamp+ '\'' + 
                 '}';
