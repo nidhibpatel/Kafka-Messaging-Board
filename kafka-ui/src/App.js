@@ -54,10 +54,12 @@ const App = () => {
               onMessage={msg => onMessageReceived(msg)}
               debug={false}
             />
-            <Messages
-              messages={messages}
-              currentUser={user}
-            />
+
+              <Messages
+                messages={messages}
+                currentUser={user}
+              />
+
             <Input onSendMessage={onSendMessage} />
           </>
         ) :
