@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const api = Axios.create({
-    baseURL: '/api/',
+    baseURL: 'http://localhost:8080/chatapi/',
 });
 
 const chatAPI = {
@@ -12,10 +12,10 @@ const chatAPI = {
 
     sendMessage: (username, text) => {
         let msg = {
-            sender: username,
-            content: text
+            from: username,
+            message: text
         }
-        return api.post(`send`, msg);
+        return api.post(`sendmessage`, msg);
     }
 }
 

@@ -2,9 +2,9 @@ import React from 'react'
 
 const Messages = ({ messages, currentUser }) => {
 
-    let renderMessage = (message) => {
-        const { sender, content, color } = message;
-        const messageFromMe = currentUser.username === message.sender;
+    let renderMessage = (msg) => {
+        const { from, message, color } = msg;
+        const messageFromMe = currentUser.username === msg.from;
         const className = messageFromMe ? "Messages-message currentUser" : "Messages-message";
         return (
             <li className={className}>
@@ -14,9 +14,9 @@ const Messages = ({ messages, currentUser }) => {
                 />
                 <div className="Message-content">
                     <div className="username">
-                        {sender}
+                        {from}
                     </div>
-                    <div className="text">{content}</div>
+                    <div className="text">{message}</div>
                 </div>
             </li>
         );
