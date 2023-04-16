@@ -28,6 +28,40 @@
   color: #61dafb;
 }
 
+.message-bubble {
+  justify-content: center;
+  display: block;
+  max-width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.sender {
+  text-align: right;
+  background-color: rgb(158, 244, 244);
+}
+
+.non-sender {
+  text-align: left;
+  background-color: rgb(227, 219, 219);
+}
+
+.sender-name {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:small;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.message-content {
+  font-size: 14px;
+}
+
+li {
+  list-style-type: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
