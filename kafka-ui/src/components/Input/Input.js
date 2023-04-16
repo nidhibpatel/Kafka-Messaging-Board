@@ -31,12 +31,10 @@ const Input = ({ onSendMessage }) => {
                 style={{ height: "40px", width: "75%" }}
             />
 
-            <Button variant="contained" color="primary" onClick={onSubmit}>
+            <Button variant="contained" color="primary" Click={onSubmit}>
                 Send
             </Button>
         </div>
     );
 }
 
-
-export default Input
