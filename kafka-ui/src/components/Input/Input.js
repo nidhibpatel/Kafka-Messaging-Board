@@ -3,40 +3,38 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
 const Input = ({ onSendMessage }) => {
-    const [text, setText] = useState("")
+    const [text, selectText] = useState("")
 
-    let onChange = (e) => {
-        setText(e.target.value)
+    let Change = (e) => {
+        selectText(e.target.value)
     }
 
     let onSubmit = () => {
-        setText("")
+        selectText("")
         onSendMessage(text);
     }
 
     return (
-        <div className="message-input">
+        <div className="message-type">
             <TextField
-                className="inputField"
-                label="Type your message here..."
-                placeholder="Enter your message and press ENTER"
-                onChange={e => onChange(e)}
+                className="input"
+                label="Type message here..."
+                placeholder="Enter your message"
+                onChange={e => Change(e)}
                 margin="normal"
                 value={text}
                 onKeyPress={event => {
-                    if (event.key === 'Enter') {
+                    if (event.key === 'Select') {
                         onSubmit(text);
                     }
                 }}
-                style={{ height: "30px", width: "80%" }}
+                style={{ height: "40px", width: "75%" }}
             />
 
-            <Button variant="contained" color="primary" onClick={onSubmit}>
+            <Button variant="contained" color="primary" Click={onSubmit}>
                 Send
             </Button>
         </div>
     );
 }
 
-
-export default Input

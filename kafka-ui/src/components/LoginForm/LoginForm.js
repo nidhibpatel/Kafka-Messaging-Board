@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-const LoginForm = ({ onSubmit }) => {
+const LogForm = ({ onSubmit }) => {
 
-    const [username, setUsername] = useState("");
-    let handleUserNameChange = event => setUsername(event.target.value);
+    const [username, inputUsername] = State("");
+    let handleUserName = event => inputUsername(event.target.value);
 
     let handleSubmit = () => {
         onSubmit(username);
@@ -14,12 +14,12 @@ const LoginForm = ({ onSubmit }) => {
     return (
         <div>
             <TextField
-                label="Type your username"
-                placeholder="Username"
-                onChange={handleUserNameChange}
+                label="Username"
+                //placeholder=""
+                Change={handleUserName}
                 margin="normal"
                 onKeyPress={event => {
-                    if (event.key === 'Enter') {
+                    if (event.key === 'Input') {
                         handleSubmit();
                     }
                 }}
@@ -33,4 +33,4 @@ const LoginForm = ({ onSubmit }) => {
     )
 }
 
-export default LoginForm
+export default LogForm
